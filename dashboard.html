@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Mi Plataforma</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">MiPlataforma</div>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="index.html">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="dashboard-section">
+            <h2>Bienvenido al Dashboard</h2>
+            <div class="dashboard-options">
+                <button id="create-character-button">Crear Personaje</button>
+                <button id="view-characters-button">Ver Personajes</button>
+                <button id="join-game-button">Unirse a Partida</button>
+                <button id="create-game-button">Crear Partida</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 MiPlataforma. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Modales para las distintas opciones -->
+    <div id="create-character-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-create-character" class="close">&times;</span>
+            <h2>Crear Personaje</h2>
+            <form id="create-character-form">
+                <label for="character-name">Nombre:</label>
+                <input type="text" id="character-name" name="character-name" required>
+                
+                <label for="character-race">Raza:</label>
+                <select id="character-race" name="character-race" required>
+                    <option value="humano">Humano</option>
+                    <option value="elfo">Elfo</option>
+                    <option value="enano">Enano</option>
+                </select>
+                
+                <label for="character-class">Clase:</label>
+                <select id="character-class" name="character-class" required>
+                    <option value="guerrero">Guerrero</option>
+                    <option value="clerigo">Clérigo</option>
+                    <option value="mago">Mago</option>
+                </select>
+                
+                <label for="character-gender">Sexo:</label>
+                <select id="character-gender" name="character-gender" required>
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                </select>
+                
+                <label for="character-strength">Fuerza:</label>
+                <input type="number" id="character-strength" name="character-strength" min="0" max="27" required>
+                
+                <label for="character-intelligence">Inteligencia:</label>
+                <input type="number" id="character-intelligence" name="character-intelligence" min="0" max="27" required>
+                
+                <label for="character-dexterity">Destreza:</label>
+                <input type="number" id="character-dexterity" name="character-dexterity" min="0" max="27" required>
+                
+                <button type="submit">Crear</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="join-game-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-join-game" class="close">&times;</span>
+            <h2>Unirse a Partida</h2>
+            <!-- Aquí se mostrarán las partidas disponibles -->
+        </div>
+    </div>
+
+    <div id="create-game-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-create-game" class="close">&times;</span>
+            <h2>Crear Partida</h2>
+            <form id="create-game-form">
+                <label for="game-name">Nombre de la Partida:</label>
+                <input type="text" id="game-name" name="game-name" required>
+                
+                <button type="submit">Crear</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="view-characters-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-view-characters" class="close">&times;</span>
+            <h2>Ver Personajes</h2>
+            <!-- Aquí se mostrarán los personajes creados -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
