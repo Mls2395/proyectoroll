@@ -1,0 +1,109 @@
+/* Estilos generales */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: url('https://images.ctfassets.net/swt2dsco9mfe/2g80qbR16rUqNGyiibgNL7/287a096f57238ddc8bb6ed2eae831c96/dnd_whatisns_hero1.jpg?q=70') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-bottom: 3px solid #d4af37;
+}
+
+header .logo {
+    font-family: 'Cinzel', serif;
+    font-size: 32px;
+    color: #d4af37;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+header ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end; /* Alineación del menú a la derecha */
+}
+
+header ul li {
+    margin-left: 30px;
+}
+
+header ul li:first-child {
+    margin-left: 0;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: #d4af37;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+header ul li a:hover {
+    color: #b8860b;
+}
+
+main {
+    flex: 1; /* El contenido principal ocupa todo el espacio disponible */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.dashboard-section {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    width: 400px;
+    max-width: 90%;
+}
+
+.dashboard-section h2 {
+    font-family: 'Cinzel', serif;
+    color: #d4af37;
+    margin-bottom: 20px;
+}
+
+.dashboard-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.dashboard-options button {
+    padding: 15px 30px;
+    background-color: #d4af37;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.dashboard-options button:hover {
+    background-color: #b8860b;
+}
+
+footer {
+    background-color: #1a1a1a;
+    padding: 10px;
+    text-align: center;
+    margin-top: auto; /* Footer se coloca al final de la página */
+}
+
+footer p {
+    color: #d4af37;
+}
