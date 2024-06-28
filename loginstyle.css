@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: url('https://images.ctfassets.net/swt2dsco9mfe/2g80qbR16rUqNGyiibgNL7/287a096f57238ddc8bb6ed2eae831c96/dnd_whatisns_hero1.jpg?q=70');
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
+header {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-bottom: 3px solid #d4af37;
+}
+
+header .logo {
+    font-family: 'Cinzel', serif;
+    font-size: 32px;
+    color: #d4af37;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+header ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header ul li {
+    margin-left: 30px;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: #d4af37;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+header ul li a:hover {
+    color: #b8860b;
+}
+
+main {
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 100px);
+}
+
+.login-register {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    width: 400px;
+    max-width: 90%;
+}
+
+.form-container {
+    text-align: center;
+}
+
+.form-tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    background: none;
+    border: 2px solid #d4af37;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: #d4af37;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 18px;
+    font-family: 'Cinzel', serif;
+}
+
+.tab-button.active {
+    background-color: #d4af37;
+    color: #000;
+}
+
+.form-content {
+    display: none;
+}
+
+.form-content.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+h2 {
+    font-family: 'Cinzel', serif;
+    color: #d4af37;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    margin-top: 10px;
+    color: #d4af37;
+    align-self: flex-start;
+}
+
+input {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #d4af37;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    width: 100%;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #d4af37;
+    color: #000;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #b8860b;
+}
+
+.link-to-main {
+    margin-top: 20px;
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.link-to-main:hover {
+    color: #b8860b;
+}

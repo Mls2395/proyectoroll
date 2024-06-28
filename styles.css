@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -50,100 +49,71 @@ header ul li a:hover {
 
 main {
     padding: 50px 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 100px);
 }
 
-.login-register {
-    background: rgba(0, 0, 0, 0.8);
-    padding: 40px;
-    border: 3px solid #d4af37;
-    border-radius: 15px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
-    width: 400px;
-}
-
-.form-container {
+.hero {
     text-align: center;
+    padding: 100px 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
 }
 
-.form-tabs {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
-}
-
-.tab-button {
-    background: none;
-    border: 2px solid #d4af37;
-    border-radius: 5px;
-    padding: 10px 20px;
-    color: #d4af37;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-    font-size: 18px;
+.hero h1 {
     font-family: 'Cinzel', serif;
+    font-size: 48px;
+    margin: 0 0 20px;
 }
 
-.tab-button.active {
-    background-color: #d4af37;
-    color: #000;
+.hero p {
+    font-size: 24px;
+    margin: 0 0 20px;
 }
 
-.form-content {
-    display: none;
-}
-
-.form-content.active {
-    display: block;
-}
-
-h2 {
-    font-family: 'Cinzel', serif;
-    color: #d4af37;
-    margin-bottom: 20px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-label {
-    margin-top: 10px;
-    color: #d4af37;
-    align-self: flex-start;
-}
-
-input {
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #d4af37;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    width: 100%;
-}
-
-button {
-    margin-top: 20px;
-    padding: 10px 20px;
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 20px;
+    font-weight: bold;
     background-color: #d4af37;
     color: #000;
     text-decoration: none;
     border-radius: 10px;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    border: none;
     transition: background-color 0.3s;
 }
 
-button:hover {
+.cta-button:hover {
     background-color: #b8860b;
+}
+
+.features, .about {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.features h2, .about h2 {
+    font-family: 'Cinzel', serif;
+    color: #d4af37;
+    margin-bottom: 20px;
+}
+
+.feature-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.feature-item {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    width: 200px;
+    border: 2px solid #d4af37;
+}
+
+.feature-item h3 {
+    font-family: 'Cinzel', serif;
+    color: #d4af37;
+    margin-bottom: 10px;
 }
 
 footer {

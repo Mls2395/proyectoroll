@@ -8,56 +8,66 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="create-character-modal" class="modal">
-        <div class="modal-content">
-            <span id="close-create-character" class="close">&times;</span>
-            <h2>Crear Personaje</h2>
-            <form id="create-character-form">
-                <label for="nombrePersonaje">Nombre:</label>
-                <input type="text" id="nombrePersonaje" name="nombrePersonaje" required>
-                
-                <label for="razaPersonaje">Raza:</label>
-                <select id="razaPersonaje" name="razaPersonaje" required>
-                    <option value="humano">Humano</option>
-                    <option value="elfo">Elfo</option>
-                    <option value="enano">Enano</option>
-                </select>
-                
-                <label for="clasePersonaje">Clase:</label>
-                <select id="clasePersonaje" name="clasePersonaje" required>
-                    <option value="guerrero">Guerrero</option>
-                    <option value="clerigo">Clérigo</option>
-                    <option value="mago">Mago</option>
-                </select>
-                
-                <label for="generoPersonaje">Sexo:</label>
-                <select id="generoPersonaje" name="generoPersonaje" required>
-                    <option value="masculino">Masculino</option>
-                    <option value="femenino">Femenino</option>
-                </select>
-                
-                <label for="character-points">Puntos restantes: <span id="puntosRestantes">27</span></label>
-                
-                <label for="fuerzaPersonaje">Fuerza:</label>
-                <input type="number" id="fuerzaPersonaje" name="fuerzaPersonaje" min="0" max="27" value="0">
-                
-                <label for="inteligenciaPersonaje">Inteligencia:</label>
-                <input type="number" id="inteligenciaPersonaje" name="inteligenciaPersonaje" min="0" max="27" value="0">
-                
-                <label for="destrezaPersonaje">Destreza:</label>
-                <input type="number" id="destrezaPersonaje" name="destrezaPersonaje" min="0" max="27" value="0">
+    <header>
+        <nav>
+            <div class="logo">Dragon Maze</div>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="create-character-modal" class="modal">
+            <div class="modal-content">
+                <span id="close-create-character" class="close">&times;</span>
+                <h2>Crear Personaje</h2>
+                <form id="create-character-form">
+                    <label for="nombrePersonaje">Nombre:</label>
+                    <input type="text" id="nombrePersonaje" name="nombrePersonaje" required>
+                    
+                    <label for="razaPersonaje">Raza:</label>
+                    <select id="razaPersonaje" name="razaPersonaje" required>
+                        <option value="humano">Humano</option>
+                        <option value="elfo">Elfo</option>
+                        <option value="enano">Enano</option>
+                    </select>
+                    
+                    <label for="clasePersonaje">Clase:</label>
+                    <select id="clasePersonaje" name="clasePersonaje" required>
+                        <option value="guerrero">Guerrero</option>
+                        <option value="clerigo">Clérigo</option>
+                        <option value="mago">Mago</option>
+                    </select>
+                    
+                    <label for="generoPersonaje">Sexo:</label>
+                    <select id="generoPersonaje" name="generoPersonaje" required>
+                        <option value="masculino">Masculino</option>
+                        <option value="femenino">Femenino</option>
+                    </select>
+                    
+                    <label for="character-points">Puntos restantes: <span id="puntosRestantes">27</span></label>
+                    
+                    <label for="fuerzaPersonaje">Fuerza:</label>
+                    <input type="number" id="fuerzaPersonaje" name="fuerzaPersonaje" min="0" max="27" value="0">
+                    
+                    <label for="inteligenciaPersonaje">Inteligencia:</label>
+                    <input type="number" id="inteligenciaPersonaje" name="inteligenciaPersonaje" min="0" max="27" value="0">
+                    
+                    <label for="destrezaPersonaje">Destreza:</label>
+                    <input type="number" id="destrezaPersonaje" name="destrezaPersonaje" min="0" max="27" value="0">
 
-                <label for="armaInicial">Arma Inicial:</label>
-                <select id="armaInicial" name="armaInicial" required>
-                    <option value="espada">Espada</option>
-                    <option value="arco">Arco</option>
-                    <option value="libro de conjuros">Libro de conjuros</option>
-                </select>
-                
-                <button type="submit">Crear</button>
-            </form>
+                    <label for="armaInicial">Arma Inicial:</label>
+                    <select id="armaInicial" name="armaInicial" required>
+                        <option value="espada">Espada</option>
+                        <option value="arco">Arco</option>
+                        <option value="libro de conjuros">Libro de conjuros</option>
+                    </select>
+                    
+                    <button type="submit">Crear</button>
+                </form>
+            </div>
         </div>
-    </div>
+    </main>
     <script src="scripts.js"></script>
 </body>
 </html>
