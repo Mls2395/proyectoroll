@@ -1,127 +1,81 @@
+
+// funcion puntos de habilidad
 document.addEventListener('DOMContentLoaded', function() {
-    const createCharacterButton = document.getElementById('create-character-button');
-    const viewCharactersButton = document.getElementById('view-characters-button');
-    const joinGameButton = document.getElementById('join-game-button');
-    const createGameButton = document.getElementById('create-game-button');
+    const puntosMaximos = 27;
+    const puntosRestantes = document.getElementById('puntosRestantes');
+    const fuerzaInput = document.getElementById('fuerzaPersonaje');
+    const inteligenciaInput = document.getElementById('inteligenciaPersonaje');
+    const destrezaInput = document.getElementById('destrezaPersonaje');
+    const crearButton = document.querySelector('button[type="submit"]');
 
-    const createCharacterModal = document.getElementById('create-character-modal');
-    const viewCharactersModal = document.getElementById('view-characters-modal');
-    const joinGameModal = document.getElementById('join-game-modal');
-    const createGameModal = document.getElementById('create-game-modal');
+    function actulizapuntosRestantes() {
+        const puntosAsignados = 
+            parseInt(fuerzaInput.value) + 
+            parseInt(inteligenciaInput.value) + 
+            parseInt(destrezaInput.value);
+        const puntosDisponibles = puntosMaximos - puntosAsignados;
 
-    const closeCreateCharacter = document.getElementById('close-create-character');
-    const closeViewCharacters = document.getElementById('close-view-characters');
-    const closeJoinGame = document.getElementById('close-join-game');
-    const closeCreateGame = document.getElementById('close-create-game');
+        puntosRestantes.textContent = puntosDisponibles;
 
-    createCharacterButton.addEventListener('click', () => {
-        createCharacterModal.style.display = 'block';
-    });
+        // Si los puntos restantes son cero, deshabilitar los inputs
+        if (puntosDisponibles <= 0) {
+            puntosRestantes.style.color = 'red';
+            fuerzaInput.max = fuerzaInput.value;
+            inteligenciaInput.max = inteligenciaInput.value;
+            destrezaInput.max = destrezaInput.value;
 
-    viewCharactersButton.addEventListener('click', () => {
-        viewCharactersModal.style.display = 'block';
-    });
+            // Disable the inputs and the submit button when points are zero
+            if (puntosDisponibles < 0) {
+                fuerzaInput.disabled = true;
+                inteligenciaInput.disabled = true;
+                destrezaInput.disabled = true;
+                crearButton.disabled = true;
+            }
+        } else {
+            puntosRestantes.style.color = '#fff';
+            fuerzaInput.max = parseInt(fuerzaInput.value) + puntosDisponibles;
+            inteligenciaInput.max = parseInt(inteligenciaInput.value) + puntosDisponibles;
+            destrezaInput.max = parseInt(destrezaInput.value) + puntosDisponibles;
 
-    joinGameButton.addEventListener('click', () => {
-        joinGameModal.style.display = 'block';
-    });
-
-    createGameButton.addEventListener('click', () => {
-        createGameModal.style.display = 'block';
-    });
-
-    closeCreateCharacter.addEventListener('click', () => {
-        createCharacterModal.style.display = 'none';
-    });
-
-    closeViewCharacters.addEventListener('click', () => {
-        viewCharactersModal.style.display = 'none';
-    });
-
-    closeJoinGame.addEventListener('click', () => {
-        joinGameModal.style.display = 'none';
-    });
-
-    closeCreateGame.addEventListener('click', () => {
-        createGameModal.style.display = 'none';
-    });
-
-    window.onclick = function(event) {
-        if (event.target === createCharacterModal) {
-            createCharacterModal.style.display = 'none';
+            // Enable the inputs and the submit button when points are available
+            fuerzaInput.disabled = false;
+            inteligenciaInput.disabled = false;
+            destrezaInput.disabled = false;
+            crearButton.disabled = false;
         }
-        if (event.target === viewCharactersModal) {
-            viewCharactersModal.style.display = 'none';
+    }
+
+    function enforceMaxValue(event) {
+        const input = event.target;
+        if (parseInt(input.value) > parseInt(input.max)) {
+            input.value = input.max;
         }
-        if (event.target === joinGameModal) {
-            joinGameModal.style.display = 'none';
-        }
-        if (event.target === createGameModal) {
-            createGameModal.style.display = 'none';
-        }
-    };
+        actulizapuntosRestantes();
+    }
 
-    // Funcionalidad para crear personaje
-    const createCharacterForm = document.getElementById('create-character-form');
-    createCharacterForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-
-        const character = {
-            name: document.getElementById('character-name').value,
-            race: document.getElementById('character-race').value,
-            class: document.getElementById('character-class').value,
-            gender: document.getElementById('character-gender').value,
-            strength: parseInt(document.getElementById('character-strength').value),
-            intelligence: parseInt(document.getElementById('character-intelligence').value),
-            dexterity: parseInt(document.getElementById('character-dexterity').value),
-            level: 1,
-            experience: 0,
-            abilities: [],
-            equipment: [],
-        };
-
-        console.log('Personaje creado:', character);
-        // Aquí puedes agregar la lógica para guardar el personaje en tu backend
-
-        createCharacterModal.style.display = 'none';
-    });
-
-    // Funcionalidad para crear partida
-    const createGameForm = document.getElementById('create-game-form');
-    createGameForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-        const gameName = document.getElementById('game-name').value;
-        console.log('Creando partida:', gameName);
-        // Aquí puedes agregar la lógica para crear la partida en tu backend
-
-        createGameModal.style.display = 'none';
-    });
+    fuerzaInput.addEventListener('input', enforceMaxValue);
+    inteligenciaInput.addEventListener('input', enforceMaxValue);
+    destrezaInput.addEventListener('input', enforceMaxValue);
+    
+    actulizapuntosRestantes();
 });
 
 
-function addExperience(character, exp) {
-    character.experience += exp;
-    while (character.experience >= 500) {
-        character.experience -= 500;
-        character.level += 1;
-        character.strength += 4;  // Ejemplo: incrementar la fuerza al subir de nivel
-    }
-    console.log('Personaje actualizado:', character);
-}
+// funcion registro / inicio de sesion
+function showForm(formId) {
+            const loginForm = document.getElementById('login');
+            const registerForm = document.getElementById('register');
+            const buttons = document.querySelectorAll('.tab-button');
 
-// Ejemplo de uso
-let myCharacter = {
-    name: 'John',
-    race: 'humano',
-    class: 'guerrero',
-    gender: 'masculino',
-    strength: 10,
-    intelligence: 5,
-    dexterity: 7,
-    level: 1,
-    experience: 0,
-    abilities: [],
-    equipment: [],
-};
-
-addExperience(myCharacter, 600); // Añadir experiencia y verificar nivelación
+            if (formId === 'login') {
+                loginForm.classList.add('active');
+                registerForm.classList.remove('active');
+                buttons[0].classList.add('active');
+                buttons[1].classList.remove('active');
+            } else {
+                loginForm.classList.remove('active');
+                registerForm.classList.add('active');
+                buttons[0].classList.remove('active');
+                buttons[1].classList.add('active');
+            }
+        }
